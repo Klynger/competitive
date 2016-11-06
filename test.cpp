@@ -4,6 +4,6 @@ using namespace std;
 
 int main() {
 
-	printf("Test1\n");
+	printf("Arquivo de teste adicionado\n");
 	return 0;
 }
