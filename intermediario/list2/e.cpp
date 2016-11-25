@@ -76,9 +76,9 @@ inline void setBestSum(int node, int l, int r) {
 			tree[node].l = tree[left(node)].l;
 			tree[node].r = tree[left(node)].r
 		} else {
-			tree[node].bestSum = tree[left(node)].bestSum;
-			tree[node].l = tree[left(node)].l;
-			tree[node].r = tree[left(node)].r
+			tree[node].bestSum = tree[right(node)].bestSum;
+			tree[node].l = tree[right(node)].l;
+			tree[node].r = tree[right(node)].r
 		}
 	}
 
@@ -97,7 +97,7 @@ void create(int node, int l, int r) {
 		int mid = (l+r)>>1;
 		create(left(node), l, mid);
 		create(right(node), mid+1, r);
-		tree[node] = max(tree[left(node)], tree[right(node)]);
+		setBestSum(node, l, r);
 	}
  
 }
